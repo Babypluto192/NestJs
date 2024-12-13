@@ -1,0 +1,19 @@
+version: '3'
+services: 
+    postgresql: 
+        image: postgres
+        container_name: nestJSPostgres
+        ports: 
+          - "5432:5432"
+        environment: 
+          - POSTGRES_HOST = localhost
+          - POSTGRES_USER = postgres
+          - POSTGRES_PASSWORD = 123
+          - POSTGRES_DATABASE = newdb
+        command: postgres
+        restart: always
+    redis: 
+      image: redis:alpine3.14
+      container_name: nestJSRedis
+      ports: 
+          - "6379:6379"
